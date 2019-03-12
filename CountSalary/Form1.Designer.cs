@@ -40,8 +40,8 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tab_MainPage = new System.Windows.Forms.TabPage();
             this.tab_CalcPage = new System.Windows.Forms.TabPage();
+            this.label_sum = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.sum_label = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tab_MainPage.SuspendLayout();
             this.tab_CalcPage.SuspendLayout();
@@ -97,6 +97,7 @@
             this.button_main.TabIndex = 1;
             this.button_main.Text = "Ок";
             this.button_main.UseVisualStyleBackColor = true;
+            this.button_main.Click += new System.EventHandler(this.button_main_Click);
             // 
             // label_name
             // 
@@ -125,12 +126,16 @@
             // 
             // tabControl
             // 
+            this.tabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl.Controls.Add(this.tab_MainPage);
             this.tabControl.Controls.Add(this.tab_CalcPage);
-            this.tabControl.Location = new System.Drawing.Point(-2, -13);
+            this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl.Location = new System.Drawing.Point(-2, 11);
+            this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(495, 363);
+            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 6;
             this.tabControl.TabStop = false;
             // 
@@ -143,10 +148,10 @@
             this.tab_MainPage.Controls.Add(this.label2);
             this.tab_MainPage.Controls.Add(this.countWorkDay_textBox);
             this.tab_MainPage.Controls.Add(this.button1);
-            this.tab_MainPage.Location = new System.Drawing.Point(4, 22);
+            this.tab_MainPage.Location = new System.Drawing.Point(4, 5);
             this.tab_MainPage.Name = "tab_MainPage";
             this.tab_MainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_MainPage.Size = new System.Drawing.Size(487, 337);
+            this.tab_MainPage.Size = new System.Drawing.Size(487, 354);
             this.tab_MainPage.TabIndex = 0;
             this.tab_MainPage.Text = "MainPage";
             this.tab_MainPage.UseVisualStyleBackColor = true;
@@ -154,17 +159,26 @@
             // tab_CalcPage
             // 
             this.tab_CalcPage.AutoScroll = true;
-            this.tab_CalcPage.Controls.Add(this.sum_label);
+            this.tab_CalcPage.Controls.Add(this.label_sum);
             this.tab_CalcPage.Controls.Add(this.label4);
             this.tab_CalcPage.Controls.Add(this.button_main);
             this.tab_CalcPage.Controls.Add(this.label_name);
-            this.tab_CalcPage.Location = new System.Drawing.Point(4, 22);
+            this.tab_CalcPage.Location = new System.Drawing.Point(4, 5);
             this.tab_CalcPage.Name = "tab_CalcPage";
             this.tab_CalcPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_CalcPage.Size = new System.Drawing.Size(487, 337);
+            this.tab_CalcPage.Size = new System.Drawing.Size(487, 354);
             this.tab_CalcPage.TabIndex = 1;
             this.tab_CalcPage.Text = "CalcPage";
             this.tab_CalcPage.UseVisualStyleBackColor = true;
+            // 
+            // label_sum
+            // 
+            this.label_sum.AutoSize = true;
+            this.label_sum.Location = new System.Drawing.Point(11, 240);
+            this.label_sum.Name = "label_sum";
+            this.label_sum.Size = new System.Drawing.Size(40, 13);
+            this.label_sum.TabIndex = 7;
+            this.label_sum.Text = "сумма";
             // 
             // label4
             // 
@@ -176,15 +190,6 @@
             this.label4.Size = new System.Drawing.Size(239, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Нажмите Tab, для перехода к следующему дню";
-            // 
-            // sum_label
-            // 
-            this.sum_label.AutoSize = true;
-            this.sum_label.Location = new System.Drawing.Point(11, 240);
-            this.sum_label.Name = "sum_label";
-            this.sum_label.Size = new System.Drawing.Size(40, 13);
-            this.sum_label.TabIndex = 7;
-            this.sum_label.Text = "сумма";
             // 
             // Form1
             // 
@@ -221,7 +226,7 @@
         private System.Windows.Forms.TabPage tab_MainPage;
         private System.Windows.Forms.TabPage tab_CalcPage;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label sum_label;
+        private System.Windows.Forms.Label label_sum;
     }
 }
 

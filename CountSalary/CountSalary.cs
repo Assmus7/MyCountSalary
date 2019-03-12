@@ -14,6 +14,12 @@ namespace CountSalary
         private int _numberOfHours = 0;
         private int _numberOfPeople = 0;
         private string _monthSalary = "";
+        private int _sum = 0;
+
+        public CountSalary()
+        {
+
+        }
 
         /// <summary>
         /// Конструктор для присваивания переменных с информацией полиграфолога.
@@ -100,6 +106,13 @@ namespace CountSalary
                 else
                     _monthSalary = value;
             }
+        }
+
+        public int Sum { get => _sum; set => _sum = value; } 
+
+        public int Add(int value1, int value2)
+        {
+            return Sum = value1 + value2;
         }
     }
 }
